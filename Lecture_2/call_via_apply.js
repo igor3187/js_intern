@@ -14,4 +14,4 @@ function sum(a = 1, b = 2) {
 
 sum.c = 10;
 
-sum.call(sum);
+//sum.call.apply()
