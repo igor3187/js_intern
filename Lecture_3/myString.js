@@ -1,5 +1,15 @@
 class MyString {
-  // Your implementation here
+    reverse(str) {
+        return str.split('').reverse().join('');
+    }
+
+    ucFirst(str) {
+        return str.charAt(0).toUpperCase() + str.substring(1);
+    }
+
+    ucWords(str) {
+        return str.split(' ').map(string => this.ucFirst(string)).join(' ');
+    }
 }
 
 const str = new MyString();

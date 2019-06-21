@@ -1,15 +1,19 @@
 class Watch {
-  constructor() {
-    this.interval = null;
-  }
+    constructor() {
+        this.interval = null;
+    }
 
-  start() {
-    // Your implementation here
-  }
+    start() {
+        this.interval = setInterval(() => {
+            console.clear();
+            console.log(new Date);
+        }, 1000);
+    }
 
-  stop() {
-    // Your implementation here
-  }
+    stop() {
+        clearInterval(this.interval);
+        console.clear();
+    }
 }
 
 const watch = new Watch();
@@ -18,6 +22,6 @@ watch.start();
 
 
 setTimeout(() => {
-  // Остановится через 10 секунд
-  watch.stop();
+    // Остановится через 10 секунд
+    watch.stop();
 }, 10000);
