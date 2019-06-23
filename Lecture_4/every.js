@@ -1,4 +1,4 @@
-function some(array, callbackFn) {
+function every(array, callbackFn) {
 
 }
 
@@ -19,6 +19,6 @@ const array3 = [
   {name: 'Item 4', value: 40}
 ];
 
-console.log(some(array, callbackFn)); // true
-console.log(some(array2, callbackFn)); // false
-console.log(some(array3, callbackFn2)); // true
+console.log(every(array, callbackFn)); // true
+console.log(every(array2, callbackFn)); // false
+console.log(every(array3, callbackFn2)); // true
