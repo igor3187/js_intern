@@ -1,11 +1,15 @@
 const map = (array, fn) => {
-  // Your implementation here
+    let results = [];
+    for (let i = 0; i < array.length; i++) {
+        results.push(fn(array[i], i, array));
+    }
+    return results;
 };
 
 const array = [1, 2, 3];
 
 const callbackFn = (item, index, arr) => {
-  return item * index;
+    return item * index;
 };
 
 const processedArray = map(array, callbackFn);

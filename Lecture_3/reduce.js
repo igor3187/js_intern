@@ -1,5 +1,9 @@
 const reduce = (array, fn, initial) => {
-  // Your implementation here
+    let result = initial;
+    for (let i = 0; i < array.length; i++) {
+      result = fn.call(null, result, array[i], i, array);
+    }
+    return result;
 };
 
 const array = [1, 2, 3];
