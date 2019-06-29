@@ -11,7 +11,6 @@ class User {
     }
 }
 
-
 class Student extends User {
 
     constructor(name, surname, courseIndtfc, year) {
@@ -66,7 +65,8 @@ class Student extends User {
 
     getCourse(value) {
         value = new Date(2019) - this.courseIndtfc;
-        console.log(" Student who was starting to learn in " + this.getYear() + " and who's name is " + this.getFullName() + " is on " + value + "rd course now. ")
+        console.log("Student who was starting to learn in " + this.getYear() + " and who's name is " + this.getFullName() + " is on " + value + "rd course now. ")
+        return "current course is: " + value;
     }
 
 }
@@ -76,5 +76,5 @@ const student = new Student('Вася', 'Пупкин', 2016);
 console.log(student.name); //выведет 'Вася'
 console.log(student.surname); //выведет 'Пупкин'
 console.log(student.getFullName()); //выведет 'Вася Пупкин'
-console.log(student.year); //выведет 2016
+console.log(student.getYear()); //выведет 2016
 console.log(student.getCourse()); //выведет 3 - третий курс, так как текущий год 2019
