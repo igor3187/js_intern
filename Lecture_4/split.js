@@ -13,10 +13,8 @@ function split(string, separator, limit) {
         }
     }
     return result;
-
 }
-
 
 const string = 'Lorem ipsum dolor sit amet consectetur adipiscing elit';
 
-console.log(split(string, ' '));
+console.log(split(string, ' ', 8));
