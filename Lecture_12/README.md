@@ -1,6 +1,6 @@
 # Lecture 12
 
-Создать CRUD операции для `posts, comments, albums, albums, todos, users`
+Создать CRUD операции для `posts, comments, albums, photos, todos, users`
 
 Пример
 
