@@ -3,18 +3,9 @@ const htmlMin = require('gulp-htmlmin');
 const sass = require('gulp-sass');
 const cleanCss = require('gulp-clean-css');
 
-gulp.task('run', ['html', 'scss']);
-
-gulp.task('watch', function () {
-    gulp.watch('./src/*.html', ['html']);
-    gulp.watch('./src/*.scss', ['scss']);
-});
-
-gulp.task('default', ['run', 'watch']);
-
 sass.compiler = require('node-sass');
 
-gulp.task('scss', function () {
+gulp.task('scss', () => {
     return gulp.src('./src/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCss({compatibility: 'ie8'}))
@@ -26,3 +17,16 @@ gulp.task('html', () => {
         .pipe(htmlMin({collapseWhitespace: true}))
         .pipe(gulp.dest('./dist'));
 });
+
+gulp.task('default', gulp.series('html', 'scss'));
+
+gulp.task('watch', gulp.series('html', 'scss', () => {
+    gulp.watch('./src/*.html', ['html']);
+    gulp.watch('./src/*.scss', ['scss']);
+}));
+
+
+
+
+
+
